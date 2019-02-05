@@ -70,3 +70,35 @@ git init
 Stage Changes locally
 ======================
 Under source control click stage + button
+
+Production build with Angular CLI
+================================
+under angular.json in order to run with the kestrel server
+for the API, change the outputPath to "outputPath": "../DatingApp.API/wwwroot"
+
+then run
+ng build
+
+Get ksetrel server to serve angular app within the API
+======================================================
+Changes to Startup.cs
+
+build for Production
+===================
+apiUrl: 'api/' --add this code to environment.prod.ts
+ng build --prod
+
+build with build-optimizer switched off
+=======================================
+This is in case you loose out on css functionality due to file minification
+-build optimizer is turned on by default
+-turning off build optimizer increases the file sizes but optimizes on css
+ng build --prod --build-optimizer=false
+
+set development environment to production
+==========================================
+console - set ASPNETCORE_ENVIRONMENT=Production
+powershell - Env:ASPNETCORE_ENVIRONMENT = "Production"
+add migrations - dotnet ef migrations add sqlInitial
+
+
