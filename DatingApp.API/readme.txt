@@ -101,4 +101,16 @@ console - set ASPNETCORE_ENVIRONMENT=Production
 powershell - Env:ASPNETCORE_ENVIRONMENT = "Production"
 add migrations - dotnet ef migrations add sqlInitial
 
+DotNet Publish
+==============
+dotnet publish -o /d/Projects/hosting/datingapp
+
+Dotnet database drop
+====================
+dotnet ef database drop
+
+Dotnet ef remove migrations
+===========================
+dotnet ef migrations remove
+
 
